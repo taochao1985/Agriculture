@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Chat;
+use App\Http\Models\Chat;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Vinkla\Pusher\Facades\Pusher as LaravelPusher;
@@ -28,9 +28,9 @@ class ChatController extends Controller
         $chatText = $request->input('chat');
 
         $data = [
-            'sender_id' => $sender_id, 
-            'receiver_id' => $receiver_id, 
-            'chat' => $chatText, 
+            'sender_id' => $sender_id,
+            'receiver_id' => $receiver_id,
+            'chat' => $chatText,
             'read' => 1
         ];
         $chat = Chat::create($data);

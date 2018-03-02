@@ -5,9 +5,14 @@ use Illuminate\Http\Request;
 Route::post('forgot-password', 'UserController@forgotPassword');
 Route::post('reset-password', 'UserController@resetPassword');
 
-Route::get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::get('/login', function (Request $request) {
+    echo '<pre>';print_r($request);
+})->middleware('auth:api');
+
 
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     Route::get('user-list', 'UserController@getUserList');

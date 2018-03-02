@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Mail\ForgotPassword;
-use App\Token;
-use App\User;
+use App\Http\Models\Token;
+use App\Http\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\PrivateMessage;
+use App\Http\Models\PrivateMessage;
 use Illuminate\Http\Request;
 use LRedis;
 use App\Http\Requests;
