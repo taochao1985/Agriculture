@@ -1,25 +1,3 @@
-<script>
-  import PrivateMessageNotificationDropdown from './private-message/PrivateMessageNotificationDropdown'
-  import {mapState} from 'vuex'
-  export default {
-    components: {
-      'pm-notification': PrivateMessageNotificationDropdown
-    },
-    computed: {
-      ...mapState({
-        userStore: state => state.userStore
-      })
-    },
-    methods: {
-      handleLogout () {
-        this.$store.dispatch('clearAuthUser')
-        window.localStorage.removeItem('authUser')
-        this.$router.push({name: 'home'})
-      }
-    }
-  }
-</script>
-
 <template>
   <nav class="navbar navbar-default" v-if="userStore.authUser !== null && userStore.authUser.access_token">
     <div class="container-fluid">
@@ -72,3 +50,24 @@
     </div><!-- /.container-fluid -->
   </nav>
 </template>
+<script>
+  import PrivateMessageNotificationDropdown from './private-message/PrivateMessageNotificationDropdown'
+  import {mapState} from 'vuex'
+  export default {
+    components: {
+      'pm-notification': PrivateMessageNotificationDropdown
+    },
+    computed: {
+      ...mapState({
+        userStore: state => state.userStore
+      })
+    },
+    methods: {
+      handleLogout () {
+        this.$store.dispatch('clearAuthUser')
+        window.localStorage.removeItem('authUser')
+        this.$router.push({name: 'home'})
+      }
+    }
+  }
+</script>

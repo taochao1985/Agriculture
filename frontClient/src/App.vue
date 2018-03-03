@@ -1,8 +1,19 @@
+<template>
+  <div>
+    <top-menu v-if="condition"></top-menu>
+    <router-view></router-view>
+  </div>
+</template>
 <script>
   import {mapState} from 'vuex'
   import TopMenu from './components/TopMenu'
 
   export default {
+    data () {
+      return {
+        condition: true
+      }
+    },
     components: {
       TopMenu
     },
@@ -19,18 +30,9 @@
       connect () {
         console.log('socket connected')
       }
+    },
+    mounted () {
+      this.condition = this.$router.history.current.meta.pos !== 'usercenter'
     }
   }
 </script>
-
-<template>
-  <div>
-    <top-menu></top-menu>
-    <router-view></router-view>
-  </div>
-</template>
-
-<style lang="sass">
-  @import './assets/css/bootstrap.css'
-  @import './assets/css/global.scss'
-</style>
