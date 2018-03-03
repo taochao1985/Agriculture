@@ -1,11 +1,17 @@
 <template>
   <div id="">
-		Dashboard
+		<upload-component></upload-component>
+    <editor-component></editor-component>
   </div>
 </template>
 <script>
+import UploadComponent from './common/Upload';
+import EditorComponent from './common/Editor';
 export default {
-  name: "",
+  components: {
+    UploadComponent,
+    EditorComponent
+  },
   data: () => ({
 
   })

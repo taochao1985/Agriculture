@@ -45542,13 +45542,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      items: [{ icon: 'contacts', text: 'Contacts', href: '/admin#/catelist' }, { icon: 'history', text: 'Frequently contacted', href: '/admin#/' }, {
+      items: [{ icon: 'home', text: 'Dashboard', href: '/admin#/' }, { icon: 'history', text: 'Frequently contacted', href: '/admin#/' }, {
         icon: 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
-        text: 'Labels',
+        text: '基础设置',
         model: true,
-
-        children: [{ icon: 'add', text: 'Create label', href: '/admin#/catelist' }]
+        children: [{ icon: 'add', text: '分类管理', href: '/admin#/catelist' }]
       }]
     };
   },
@@ -45914,8 +45913,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
-//
 
 
 
@@ -45948,9 +45945,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
                 this.$store.dispatch('setToken', null);
                 this.$store.dispatch('setUser', null);
+                this.$store.dispatch('set_token', null);
                 window.location.reload();
 
-              case 6:
+              case 7:
               case 'end':
                 return _context.stop();
             }
@@ -46086,18 +46084,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "v-content",
-        [
-          _c(
-            "v-container",
-            { attrs: { fluid: "", "fill-height": "" } },
-            [_c("router-view")],
-            1
-          )
-        ],
-        1
-      ),
+      _c("v-content", [_c("router-view")], 1),
       _vm._v(" "),
       _c(
         "v-btn",

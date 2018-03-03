@@ -50,9 +50,7 @@
     </v-speed-dial>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height>
-         <router-view/>
-      </v-container>
+      <router-view />
     </v-content>
     <v-btn
       fab
@@ -88,6 +86,7 @@
         })
         this.$store.dispatch('setToken', null)
         this.$store.dispatch('setUser', null)
+        this.$store.dispatch('set_token', null)
         window.location.reload();
       }
     },

@@ -47,6 +47,7 @@ import AuthenticationService from '../services/AuthenticationService';
           })
           this.$store.dispatch('setToken', response.data.data.token)
           this.$store.dispatch('setUser', response.data.data.user)
+          this.$store.dispatch('set_token', this._token)
           window.location.reload();
         } catch (error) {
           console.log(error)

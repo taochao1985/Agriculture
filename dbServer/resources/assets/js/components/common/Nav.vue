@@ -55,16 +55,15 @@
   export default {
     data: () => ({
       items: [
-        { icon: 'contacts', text: 'Contacts', href:'/admin#/catelist' },
+        { icon: 'home', text: 'Dashboard', href:'/admin#/' },
         { icon: 'history', text: 'Frequently contacted', href:'/admin#/' },
         {
           icon: 'keyboard_arrow_up',
           'icon-alt': 'keyboard_arrow_down',
-          text: 'Labels',
+          text: '基础设置',
           model: true,
-
           children: [
-            { icon: 'add', text: 'Create label' ,href:'/admin#/catelist',}
+            { icon: 'add', text: '分类管理' ,href:'/admin#/catelist',}
           ]
         }
       ]
