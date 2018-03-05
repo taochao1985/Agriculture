@@ -1,10 +1,17 @@
 <template>
   <div id="">
-    User Dashboard
+    <user-header></user-header>
+    <div class="">
+
+    </div>
   </div>
 </template>
 <script>
+import UserHeader from './common/Header'
 export default {
+  components: {
+    UserHeader
+  },
   name: '',
   data: () => ({
 

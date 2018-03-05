@@ -7,7 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
 import Logger from './plugins/Logger'
 import router from './router'
+import * as uiv from 'uiv'
 
+Vue.use(uiv)
 Vue.use(VueResource)
 Vue.use(Logger, {loggin: true})
 Vue.use(VueSocketio, 'http://localhost:8890')
