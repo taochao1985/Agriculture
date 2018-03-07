@@ -27,4 +27,19 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     Route::post('get-private-message', 'PrivateMessageController@getPrivateMessageById');
     Route::post('get-private-messages-sent', 'PrivateMessageController@getPrivateMessageSent');
     Route::post('send-private-message', 'PrivateMessageController@sendPrivateMessage');
+    Route::post('file-upload', 'FileUploadController@index')->name('file.upload');
+    Route::post('file-destory', 'FileUploadController@destory')->name('file.destory');
+});
+
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:api', 'namespace' => 'frontEnd'], function () {
+    Route::get('categories', 'CategoriesController@index')->name('front.categories.list');
+
+    Route::group(['prefix' => 'bids'], function () {
+        Route::get('list', 'BidsController@index')->name('front.bids.list');
+        Route::get('show/{id}', 'BidsController@show')->name('front.bids.show');
+        Route::post('store', 'BidsController@store')->name('front.bids.store');
+        Route::post('update/{id}', 'BidsController@update')->name('front.bids.update');
+        Route::post('delete/{id}', 'BidsController@destroy')->name('front.bids.delete');
+    });
+
 });

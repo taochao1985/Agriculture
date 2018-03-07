@@ -35,4 +35,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Token');
     }
+
+    public function bids(){
+        return $this->hasMany(Bids::class);
+    }
+
+    public function publish(Bids $bid){
+        return $this->bids()->save($bid);
+    }
 }

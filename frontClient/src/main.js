@@ -8,7 +8,9 @@ import App from './App'
 import Logger from './plugins/Logger'
 import router from './router'
 import * as uiv from 'uiv'
+import Vuelidate from 'vuelidate'
 
+Vue.use(Vuelidate)
 Vue.use(uiv)
 Vue.use(VueResource)
 Vue.use(Logger, {loggin: true})
@@ -43,7 +45,6 @@ Vue.http.interceptors.push((request, next) => {
 new Vue({
   router, store
 }).$mount('#app')
-
 // new Vue({
 //   el: '#app',
 //   router,

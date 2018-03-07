@@ -3,6 +3,7 @@ import DashboardPage from '../pages/DashboardPage'
 import ChatPage from '../pages/ChatPage'
 import ForgotPassword from '../pages/ForgotPassword'
 import ResetPassword from '../pages/ResetPassword'
+import Login from '../pages/LoginPage'
 
 import PrivateMessageInbox from '../components/private-message/PrivateMessageInbox'
 import PrivateMessageSent from '../components/private-message/PrivateMessageSent'
@@ -17,6 +18,11 @@ export default {
       path: '/forgot-password',
       component: ForgotPassword,
       name: 'forgot-password'
+    },
+    {
+      path: '/login',
+      component: Login,
+      name: 'home'
     },
     {
       path: '/reset-password/:token',
